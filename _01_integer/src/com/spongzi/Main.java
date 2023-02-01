@@ -1,5 +1,7 @@
 package com.spongzi;
 
+import com.spongzi.binary.Addition;
+
 /**
  * 主要
  *
@@ -12,5 +14,10 @@ public class Main {
          * 测试整数除法
          */
         System.out.println(IntegerDivision.divide(15, 2));
+
+        /*
+        测试二进制加法
+         */
+        System.out.println(Addition.addBinary("11", "10"));
     }
 }
