@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Array/Array.iml" filepath="$PROJECT_DIR$/Array/Array.iml" />
       <module fileurl="file://$PROJECT_DIR$/Offer_LeetCode.iml" filepath="$PROJECT_DIR$/Offer_LeetCode.iml" />
       <module fileurl="file://$PROJECT_DIR$/_01_integer/_01_integer.iml" filepath="$PROJECT_DIR$/_01_integer/_01_integer.iml" />
     </modules>
