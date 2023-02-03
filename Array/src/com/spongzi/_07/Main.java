@@ -12,7 +12,52 @@ import java.util.List;
  * @date 2023/02/02
  */
 public class Main {
+    /**
+     * 三数之和的另一种解法
+     *
+     * @param nums 给定的数组
+     * @return 返回结果集合
+     */
     public List<List<Integer>> threeSum(int[] nums) {
+        // 定义一个结果集合
+        LinkedList<List<Integer>> ans = new LinkedList<>();
+        int n = nums.length;
+        Arrays.sort(nums);
+
+        // 开始对第一个数字进行遍历
+        for (int first = 0; first < n; first++) {
+            // 每次遍历都与上一次的值不相同
+            if (first > 0 && nums[first] == nums[first - 1]) {
+                continue;
+            }
+
+            // 定义第三个值的位置
+            int third = n - 1;
+            // 定义目标值 即转变后的第一个值,把问题转化为两数之和
+            int target = -1 * nums[first];
+            for (int second = first + 1; second < n; second++) {
+                // 每次遍历都与上一次的值不相同
+                if (second > first + 1 && nums[second] == nums[second - 1]) {
+                    continue;
+                }
+                // 保证第二个值在第三个值的前面
+                while (second < third && nums[second] + nums[third] > target) {
+                    --third;
+                }
+                // 如果两个指针相交了还没有出现结果值,那么就不会再出现了,可以直接跳出循环
+                if (second == third) {
+                    break;
+                }
+                // 统计结果值
+                if (nums[second] + nums[third] == target) {
+                    ans.add(Arrays.asList(nums[first], nums[second], nums[third]));
+                }
+            }
+        }
+        return ans;
+    }
+
+    public List<List<Integer>> threeSum1(int[] nums) {
         LinkedList<List<Integer>> result = new LinkedList<>();
         if (nums.length >= 3) {
             Arrays.sort(nums);
